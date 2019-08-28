@@ -1,0 +1,27 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.content {
+  margin: auto;
+  width: 80%;
+}
+//header
+header {
+  height: 6rem;
+  .navigation {
+    width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+//section banner
+.banner {
+  height: 35rem;
+  .banner-container {
+    width: 1800px;
+    margin: 0 auto;
+    .slides {
+      width: 1000px;
+    }
+  }
+}

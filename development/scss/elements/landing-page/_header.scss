@@ -1,0 +1,33 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+header {
+  background-color: $header-color;
+}
+.navigation {
+  @include flex($justify-content:space-between, $align-items:center);
+  .logo {
+    h1 {
+      color: $font-color-secondary;
+      span {
+        color: #E58A20;
+      }
+    }
+  }
+  .nav-list {
+    @include flex($justify-content:space-between, $align-items:center);
+    list-style: none;
+    li {
+      margin-left: 1.5rem;
+      &:first-child {
+        a {
+          color:#E58A20;
+        }
+      }
+      a {
+        color: $font-color-secondary;
+        text-decoration: none;
+      }
+    }
+  }
+}

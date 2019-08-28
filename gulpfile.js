@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var sourcemaps = require("gulp-sourcemaps");
-var autoprefixer = require("gulp-autoprefixer");
+// var autoprefixer = require("gulp-autoprefixer");
 var browserSync = require("browser-sync").create();
 
 gulp.task("watch", function(cb) {
@@ -25,11 +25,6 @@ gulp.task("sass", function() {
     .src("development/scss/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.init())
-    .pipe(
-      autoprefixer({
-        browsers: ["last 4 versions"]
-      })
-    )
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("development/css"))
     .pipe(browserSync.stream());

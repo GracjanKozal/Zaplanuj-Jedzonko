@@ -1,0 +1,16 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.banner {
+  background-color: $background-color;
+  @include flex($justify-content:center, $align-items:center);
+}
+.banner-container {
+  @include flex($justify-content:space-between, $align-items:center);
+}
+.slides {
+  display: none;
+}
+.slide-visible {
+  display: block;
+}

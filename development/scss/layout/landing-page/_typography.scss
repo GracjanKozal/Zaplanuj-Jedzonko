@@ -1,0 +1,33 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+//header
+.logo {
+  font-family: $logo-font;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+.nav-list {
+  li {
+    a {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+//banner
+.banner-container {
+  .fa-chevron-left, .fa-chevron-right {
+    font-size: 3rem;
+  }
+  .slides {
+    text-align: center;
+    p {
+      font-size: 4rem;
+      &:nth-child(2) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+body {
+	font-family: $main-font;
+}
+
+.email-form-container {
+	background-color: $nav-sidePanel-color;
+	color: $background-color;
+	overflow: hidden;
+
+	.email-form {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 15vh;
+		max-width: 1400px;
+
+		.email-form-header {
+			font-size: 2rem;
+			font-weight: 400;
+		}
+
+		.email-form-inputs {
+			display: flex;
+
+			.email-form-input {
+				height: 2rem;
+				width: 200px;
+			}
+
+			.email-form-btn {
+				height: 2rem;
+				width: 100px;
+				background-color: $buttons-color;
+				border: none;
+				color: $background-color;
+				font-size: 14px;
+				font-weight: 600;
+				transition: 0.3s;
+
+				&:hover {
+					border: 1px solid $background-color;
+				}
+
+				&:active {
+					border-width: 2px;
+				}
+			}
+		}
+	}
+}

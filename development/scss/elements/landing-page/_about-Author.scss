@@ -1,0 +1,33 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.author-info {
+	display: flex;
+	justify-content: space-evenly;
+	min-height: 20vh;
+	padding: 80px 0;
+	background-color: $background-color;
+	font-family: $main-font, arial, sans-serif;
+
+	.author-info-img-container {
+		flex-basis: 20vw;
+		height: 20vw;
+		min-width: 150px;
+		min-height: 150px;
+		background-color: $nav-sidePanel-color;
+	}
+
+	.author-info-text-container {
+		flex-basis: 35vw;
+
+		.author-info-header {
+			margin-bottom: 10px;
+			font-weight: normal;
+			font-size: 30px;
+		}
+
+		.author-info-text {
+			font-size: $font-main-size;
+		}
+	}
+}

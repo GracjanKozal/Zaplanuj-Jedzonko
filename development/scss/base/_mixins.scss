@@ -1,0 +1,23 @@
+@import "variables";
+
+@mixin flex($direction:row,
+$justify-content:flex-start,
+$align-items:flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+@mixin button {
+    background-color: $buttons-color;
+    color: $font-color-secondary;
+    border: none;
+    text-align: center;
+    &:hover {
+        border: 1px solid $font-color-secondary;
+    }
+    &:active {
+        border: 3px solid $font-color-secondary;
+    }
+    @content;
+}
