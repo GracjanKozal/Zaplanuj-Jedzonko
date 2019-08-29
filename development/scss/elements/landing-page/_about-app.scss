@@ -1,2 +1,35 @@
 @import "../../base/variables";
 @import "../../base/mixins";
+// Krystian Data
+.app-info-all {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $background-color;
+  font-family: $main-font;
+  min-height: 20vh;
+  padding: 80px 0;
+  margin: 0 80px;
+}
+.app-info {
+ //  border: 1px solid blue;
+
+  padding: 0 30px;
+  background-color: $background-color;
+}
+.app-info-header  {
+  margin-bottom: 10px;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+}
+
+.app-info-text {
+  font-size: $font-main-size;
+  text-align: center;
+}
+
+.app-info-img {
+    margin-left: 40%   ;
+
+}
