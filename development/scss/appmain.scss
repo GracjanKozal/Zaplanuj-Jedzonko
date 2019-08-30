@@ -1,0 +1,9 @@
+@import "base/all";
+@import "layout/app/all";
+@import "elements/app/all";
+
+body {
+    background-image: url("../images/image.png");
+    max-width: 100%;
+    font-family: $main-font;
+}
