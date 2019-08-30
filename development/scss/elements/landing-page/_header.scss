@@ -8,9 +8,13 @@ header {
   @include flex($justify-content:space-between, $align-items:center);
   .logo {
     h1 {
-      color: $font-color-secondary;
       span {
+        &:first-child {
+          color: $font-color-secondary;
+          font-weight: 100;
+        }
         color: #E58A20;
+        font-weight: 700;
       }
     }
   }

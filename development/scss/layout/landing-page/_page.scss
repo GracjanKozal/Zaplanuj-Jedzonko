@@ -9,7 +9,7 @@
 header {
   height: 6rem;
   .navigation {
-    width: 1600px;
+    width: 1400px; //zmniejszono zawartosc bo zle bylo na Macu
     margin: 0 auto;
   }
 }
@@ -18,7 +18,7 @@ header {
 .banner {
   height: 35rem;
   .banner-container {
-    width: 1800px;
+    width: 1600px; //zmniejszono bo zbyt duzo bylo
     margin: 0 auto;
     .slides {
       width: 1000px;
