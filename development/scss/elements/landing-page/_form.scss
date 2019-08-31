@@ -9,13 +9,16 @@ body {
 	background-color: $nav-sidePanel-color;
 	color: $background-color;
 	overflow: hidden;
+	.content {
+		max-width: $content-width;
+	}
 
 	.email-form {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		height: 15vh;
-		max-width: 1400px;
+
 
 		.email-form-header {
 			font-size: 2rem;

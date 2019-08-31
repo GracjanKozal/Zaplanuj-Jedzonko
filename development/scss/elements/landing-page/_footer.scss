@@ -20,12 +20,15 @@ section.footer {
     padding-top: 1rem;
     padding-bottom: 1.5rem;
     .first, .second, .newsletter {
-      width: 28%;
+      width: 33.33%;
       font-size: 1.4em;
+    }
+    .second, .newsletter {
+      margin-left: 8rem;
     }
     li {
       margin-left: 0;
-      padding-left: 0rem;
+      padding-left: 0;
       line-height: 1.8em;
     }
     ul {

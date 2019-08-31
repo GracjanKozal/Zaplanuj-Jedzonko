@@ -1,2 +1,8 @@
 @import "../../base/variables";
 @import "../../base/mixins";
+
+body {
+  background-image: url("../images/image.png");
+  max-width: 100%;
+  font-family: $main-font;
+}

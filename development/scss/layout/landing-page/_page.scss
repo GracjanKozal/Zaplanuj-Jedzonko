@@ -19,10 +19,10 @@ header {
 .banner {
   min-height: 35rem;
   .banner-container {
-    max-width: $content-width; //zmniejszono bo zbyt duzo bylo
+    max-width: 1500px; //tu nie moze byc 1200px, bo brzydko wygląda i nie jest jak na makiecie
     margin: 0 auto;
     .slides {
-      max-width: $content-width;
+      max-width: $content-width; // nie można dawać banerowi i slajdom takiego samego width,
     }
   }
 }
