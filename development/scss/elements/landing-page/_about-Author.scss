@@ -5,10 +5,11 @@
 	background-color: $background-color;
 	div.content {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		min-height: 20vh;
 		padding: 80px 0;
 		font-family: $main-font, arial, sans-serif;
+		max-width: $content-width;
 
 		.author-info-img-container {
 			min-width: 10rem;
