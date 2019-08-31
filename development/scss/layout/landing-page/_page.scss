@@ -3,25 +3,26 @@
 
 .content {
   margin: auto;
-  width: 1200px;
+  max-width: $content-width;
 }
+
 //header
 header {
-  height: 6rem;
+  min-height: 6rem;
   .navigation {
-    width: 1400px; //zmniejszono zawartosc bo zle bylo na Macu
+    max-width: $content-width;
     margin: 0 auto;
   }
 }
 
 //section banner
 .banner {
-  height: 35rem;
+  min-height: 35rem;
   .banner-container {
-    width: 1600px; //zmniejszono bo zbyt duzo bylo
+    max-width: $content-width; //zmniejszono bo zbyt duzo bylo
     margin: 0 auto;
     .slides {
-      width: 1000px;
+      max-width: $content-width;
     }
   }
 }
