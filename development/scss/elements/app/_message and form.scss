@@ -1,0 +1,52 @@
+@import "../../base/mixins";
+@import "../../base/variables";
+
+.wrapper-message {
+  @include flex($justify-content:center, $align-items:center);
+  height: 90vh;
+  width: 85vw;
+  .welcome-message {
+    width: 1400px;
+    height: 700px;
+    background-color: $background-color;
+    border: 1px black dashed;
+    @include flex($justify-content:center, $align-items:center);
+    .internal-wrapper {
+      font-family: $main-font;
+      font-size: $font-main-size;
+      color: $font-color-grey;
+      text-align: center;
+      h2 {
+        font-size: 3rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      .form {
+        @include flex(column, $justify-content:space-between, $align-items:center);
+        margin: 2rem auto;
+        height: 110px;
+        #name {
+          height: 2.5rem;
+          width: 400px;
+          &::placeholder {
+            font-size: 1.4rem;
+          }
+        }
+        .btn-orange {
+          @include button {
+            outline: none;
+            width: 8rem;
+            height: 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
