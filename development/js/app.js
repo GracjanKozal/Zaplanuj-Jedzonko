@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 	//Karolina code
 	(function setDataLocalStorage() {
-		// i put this code in function, to protect to be overwritten,  and immediately invoked the function.
+		// i put this code in function, to protect to be overwritten,  and immediately invoked the function after declaration.
 		var nameForm = document.querySelector(".form");
 		var nameInput = document.querySelector("#name");
 		var user_Name= document.getElementById('userName');
