@@ -7,7 +7,7 @@ nameForm.addEventListener("submit", function(e) {
 	var name = nameInput.value;
 	if (name.trim()) {
 		localStorage.setItem("userName", name);
-		name = "";
+		nameInput.value = "";
 	} else {
 		alert("🍓🍌🍇 Podaj nam swoje imię 🥦🌶🥒");
 	}
