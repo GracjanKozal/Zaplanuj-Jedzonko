@@ -17,5 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				alert("🍓🍌🍇 Podaj nam swoje imię 🥦🌶🥒");
 			}
 		});
+		if (localStorage.getItem('userName')) user_Name.innerText = localStorage.getItem('userName');
+		//this line allows to display user name after the next visit on website
 	})();
 });
