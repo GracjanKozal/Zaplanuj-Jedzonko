@@ -6,8 +6,8 @@
   height: 90vh;
   width: 85vw;
   .welcome-message {
-    width: 1400px;
-    height: 700px;
+    width: 80vw;
+    height: 80vh;
     background-color: $background-color;
     border: 1px black dashed;
     @include flex($justify-content:center, $align-items:center);
