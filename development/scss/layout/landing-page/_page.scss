@@ -19,10 +19,11 @@ header {
 .banner {
   min-height: 35rem;
   .banner-container {
-    max-width: 1500px; //tu nie moze byc 1200px, bo brzydko wygląda i nie jest jak na makiecie
+    max-width: $content-width + 300px;
     margin: 0 auto;
     .slides {
-      max-width: $content-width; // nie można dawać banerowi i slajdom takiego samego width,
+      max-width: $content-width;
+      padding: 0 8rem;
     }
   }
 }
