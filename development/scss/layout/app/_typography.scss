@@ -22,7 +22,7 @@
   div, p {
       //pls do not touch bo sie bedzie zle wyswietlac na Macu u Karoliny oraz u Laury na Linuxie :)
       font-size: 1rem;
-      @media screen and (min-width: 1400px){
+      @include breakPoint1400px {
           font-size: 1.5rem;
       }
   }
