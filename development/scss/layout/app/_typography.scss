@@ -20,6 +20,10 @@
 }
 .app-welcome-Panel {
   div, p {
-      font-size: 1.5rem;
+      //pls do not touch bo sie bedzie zle wyswietlac na Macu u Karoliny oraz u Laury na Linuxie :)
+      font-size: 1rem;
+      @media screen and (min-width: 1400px){
+          font-size: 1.5rem;
+      }
   }
 }
