@@ -29,3 +29,8 @@ $align-items:flex-start) {
   border: 1px black dashed;
   @content
 }
+@mixin breakPoint1400px {
+  @media screen and (min-width: 1400px){
+    @content
+  }
+}
