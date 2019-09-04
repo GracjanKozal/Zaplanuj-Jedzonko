@@ -1,9 +1,14 @@
 @import "../../base/variables";
 @import "../../base/mixins";
+
+.visible {
+  display: flex;
+}
 .app-welcome-Panel {
   @include appMessage {
     background-color: transparent;
     border: none;
+    display: none;
   }
   @include flex(column, $justify-content:space-between, $align-items:center);
   .widgets {
@@ -54,6 +59,7 @@
         margin-left: 1%;
         .widget-icon {
           font-size: 1.5rem;
+          //pls do not remove @media
           @media screen and (min-width: 1400px){
             font-size: 2rem;
           }

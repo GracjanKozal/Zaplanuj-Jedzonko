@@ -5,6 +5,7 @@
   @include flex($justify-content:center, $align-items:center);
   height: 90vh;
   width: 85vw;
+  display: none;
   .welcome-message {
     @include appMessage;
     @include flex($justify-content:center, $align-items:center);
