@@ -1,0 +1,12 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.app-container {
+  @include flex(row, $justify-content: space-between, $align-items: center);
+}
+
+body {
+  background-image: url("../images/image.png");
+  max-width: 100%;
+  font-family: $main-font;
+}

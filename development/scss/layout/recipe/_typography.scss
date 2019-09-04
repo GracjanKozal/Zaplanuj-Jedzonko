@@ -1,0 +1,20 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.logo-header {
+    font-family: $logo-font;
+    h1 {
+        font-weight: 100;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+.user-header {
+    i {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.3rem;
+    }
+}
