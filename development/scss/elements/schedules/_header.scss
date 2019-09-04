@@ -1,0 +1,36 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+header {
+    background-color: $header-color;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    .logo-header {
+        padding-left: 1rem;
+        h1 {
+        color: $font-color-secondary;
+        span {
+            color: $header-accents-color;
+        }
+        }
+    }
+    .user-header {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        justify-content: flex-end;
+        padding-right: 1rem;
+        
+        i {
+            color: $header-accents-color;
+            padding: 0 1rem;
+        }
+        p {
+            color: #fff;
+        }
+    }
+}
