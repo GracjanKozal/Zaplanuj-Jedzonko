@@ -55,11 +55,44 @@
   }
 }
 #main-area {
-  @include flex($justify-content:space-between);
+  @include flex(row, $justify-content:space-between);
   margin-top: 1.5%;
   font-size: 1.5rem;
-  #instructions, #ingredients {
+  width: 100%;
+  .instructions, .ingredients {
+    @include flex(column, $justify-content:space-between);
     width: 48%;
-    border-bottom: 2px solid #CBCBCB;
+    height: 100%;
+    div {
+      &:first-child{
+        border-bottom: 2px solid #CBCBCB;
+        margin-bottom: 1.5%;
+        width: 100%;
+      }
+      &:nth-child(2) {
+        width: 100%;
+        height: 40%;
+        @include flex;
+        .fa-plus-square {
+          font-size: 2rem;
+          color: $message-success;
+        }
+        textarea {
+          width: 99%;
+          resize: none;
+        }
+      }
+      &:nth-child(3) {
+        height: 15vh;
+        @include breakPoint1400px {
+          height: 30vh;
+        }
+        width: 100%;
+        font-size: 1.2rem;
+        margin-top: 1.5%;
+        overflow-y: scroll;
+        flex-grow: 0;
+      }
+    }
   }
 }

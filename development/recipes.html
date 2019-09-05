@@ -36,19 +36,37 @@
                 <input type="submit" id="save" value="ZAPISZ I ZAMKNIJ">
             </div>
             <div id="recipe-name">
-                <label for="recipe">Nazwa Przepisu</label>
-                <textarea name="text" cols="30" rows="1"></textarea>
+                <label for="recipe" id="recipeName">Nazwa Przepisu</label>
+                <textarea name="text" cols="30" rows="1" id="recipe-name-descr"></textarea>
             </div>
             <div id="recipe-description">
-                <label for="recipe">Opis Przepisu</label>
-                <textarea name="text" cols="30" rows="8"></textarea>
+                <label for="recipe" id="descriptionName">Opis Przepisu</label>
+                <textarea name="text" cols="30" rows="8" id="ingredients-description"></textarea>
             </div>
             <div id="main-area">
-                <div id="instructions">
-                    <label for="recipe">INSTRUKCJE</label>
+                <div class="instructions">
+                    <div>
+                        <label for="recipe" id="instructions">INSTRUKCJE</label>
+                    </div>
+                    <div class="inst-wrap">
+                        <textarea name="text" id="instructions-description" cols="30" rows="5"></textarea>
+                        <p id="add-instruction"><i class="fas fa-plus-square"></i></p>
+                    </div>
+                    <div id="instrucion-list">
+
+                    </div>
                 </div>
-                <div id="ingredients">
-                    <label for="recipe">SKŁADNIKI</label>
+                <div class="ingredients">
+                    <div>
+                        <label for="recipe">SKŁADNIKI</label>
+                    </div>
+                    <div class="ingr-wrap">
+                        <textarea name="text" id="ingredients" cols="30" rows="5"></textarea>
+                        <p id="add-ingredients"><i class="fas fa-plus-square"></i></p>
+                    </div>
+                    <div id="ingredients-list">
+
+                    </div>
                 </div>
             </div>
         </form>
