@@ -1,0 +1,19 @@
+@import "../../base/variables";
+@import "../../base/mixins";
+
+.wrapper-message {
+  @include flex($justify-content:center, $align-items:center);
+  height: 90vh;
+  width: 85vw;
+  .welcome-message {
+    @include appMessage;
+    @include flex($justify-content: center, $align-items: center);
+
+    .internal-wrapper {
+      font-family: $main-font;
+      font-size: $font-main-size;
+      color: $font-color-grey;
+      text-align: center;
+    }
+  }
+}
