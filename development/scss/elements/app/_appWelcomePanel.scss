@@ -87,4 +87,71 @@
   height: 70%;
   background-color: $background-color;
   border: 1px black dashed;
+  margin-top: 1rem;
+  padding: 1rem;
+  div {
+    button {
+      color: $message-warning;
+      border: none;
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      overflow: visible;
+      background: transparent;
+      line-height: normal;
+      -webkit-font-smoothing: inherit;
+      -moz-osx-font-smoothing: inherit;
+      -webkit-appearance: none;
+      cursor: pointer;
+      i {
+        margin-left: .5rem;
+        margin-right: .5rem;
+        font-size: 1.2rem;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+      }
+    }
+
+    button#prev {
+      float: left;
+      margin: .5rem;
+    }
+    button#next {
+      float: right;
+      margin: .5rem;
+    }
+
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    caption {
+      color:$message-warning;
+      font-size: 1.6rem;
+      padding-bottom: 0.5rem;
+      font-weight: 800;
+      border-bottom: .5px solid $font-color-grey;
+    }
+    tr {
+      th {
+        font-size: 1.5rem;
+        text-align: left;
+        color: $header-color;
+        line-height: 3rem;
+        border-bottom: .5px solid $font-color-grey;
+      }
+      td {
+        color: $font-color-grey;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        border-bottom: .5px solid $font-color-grey;
+      }
+    }
+  }
 }
