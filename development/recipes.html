@@ -29,12 +29,29 @@
             </ul>
         </nav>
     </section>
-    <section class="wrapper-message" id="new-recipe">
-        <section class="welcome-message">
-            <div class="internal-wrapper">
-                <p>Tu bedzie nowy przepis :)</p>
+    <section id="new-recipe">
+        <form class="wrapper" method="post" id="recipe">
+            <div id="recipe-header">
+                <label for="recipe">NOWY PRZEPIS</label>
+                <input type="submit" id="save" value="ZAPISZ I ZAMKNIJ">
             </div>
-        </section>
+            <div id="recipe-name">
+                <label for="recipe">Nazwa Przepisu</label>
+                <textarea name="text" cols="30" rows="1"></textarea>
+            </div>
+            <div id="recipe-description">
+                <label for="recipe">Opis Przepisu</label>
+                <textarea name="text" cols="30" rows="8"></textarea>
+            </div>
+            <div id="main-area">
+                <div id="instructions">
+                    <label for="recipe">INSTRUKCJE</label>
+                </div>
+                <div id="ingredients">
+                    <label for="recipe">SKŁADNIKI</label>
+                </div>
+            </div>
+        </form>
     </section>
 </section>
 <script src="js/recipes.js"></script>

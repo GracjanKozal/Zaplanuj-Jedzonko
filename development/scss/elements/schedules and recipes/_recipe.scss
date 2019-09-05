@@ -1,19 +1,65 @@
 @import "../../base/variables";
 @import "../../base/mixins";
 
-.wrapper-message {
+#new-recipe {
   @include flex($justify-content:center, $align-items:center);
   height: 90vh;
   width: 85vw;
-  .welcome-message {
+  color: $font-color-grey;
+  .wrapper {
     @include appMessage;
-    @include flex($justify-content: center, $align-items: center);
-
-    .internal-wrapper {
-      font-family: $main-font;
-      font-size: $font-main-size;
-      color: $font-color-grey;
-      text-align: center;
+    padding: 3% 3%;
+  }
+  #recipe-header {
+    @include flex(row,$justify-content: space-between);
+    font-family: $main-font;
+    font-size: $font-main-size;
+    color: $font-color-grey;
+    width: 100%;
+    padding-bottom: .5%;
+    border-bottom: 2px solid #CBCBCB;
+    label {
+      color:$buttons-color;
+      font-size: 1.5rem;
+      font-weight: 600;
     }
+    #save {
+      @include button {
+        outline: none;
+        height: 2rem;
+        width: 15%;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+#recipe-name {
+  @include flex(row,$justify-content: space-between);
+  margin: 1.5% 0;
+  font-size: 1.5rem;
+  textarea {
+    width: 70%;
+    height: 2rem;
+    resize: none;
+  }
+}
+
+#recipe-description {
+  @include flex(row,$justify-content: space-between);
+  font-size: 1.5rem;
+  textarea {
+    width: 70%;
+    height: 5rem;
+    resize: none;
+  }
+}
+#main-area {
+  @include flex($justify-content:space-between);
+  margin-top: 1.5%;
+  font-size: 1.5rem;
+  #instructions, #ingredients {
+    width: 48%;
+    border-bottom: 2px solid #CBCBCB;
   }
 }

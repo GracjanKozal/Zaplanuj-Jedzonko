@@ -18,3 +18,11 @@
         font-size: 1.3rem;
     }
 }
+
+#new-recipe {
+    textarea {
+        font-size: 1rem;
+        font-family: $main-font;
+        color: $font-color-grey;
+    }
+}
