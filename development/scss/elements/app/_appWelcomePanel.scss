@@ -107,7 +107,10 @@
       i {
         margin-left: .5rem;
         margin-right: .5rem;
-        font-size: 1.2rem;
+        font-size: 1rem; //1.2
+        @include breakPoint1400px {
+          font-size: 1.2rem;
+        }
       }
       &:focus {
         outline: none;
@@ -133,24 +136,35 @@
     border-collapse: collapse;
     caption {
       color:$message-warning;
-      font-size: 1.6rem;
+      font-size: 1.2rem;//1.6
+      @include breakPoint1400px {
+        font-size: 1.6rem;
+      }
       padding-bottom: 0.5rem;
       font-weight: 800;
       border-bottom: .5px solid $font-color-grey;
     }
     tr {
       th {
-        font-size: 1.5rem;
+        font-size: 1rem; //1.5
         text-align: left;
         color: $header-color;
-        line-height: 3rem;
+        line-height: 2rem; //3
         border-bottom: .5px solid $font-color-grey;
+        @include breakPoint1400px {
+          font-size: 1.5rem;
+          line-height: 3rem;
+        }
       }
       td {
         color: $font-color-grey;
-        font-size: 1.3rem;
-        line-height: 3rem;
+        font-size: 1rem; //1,3
+        line-height: 2rem; //3
         border-bottom: .5px solid $font-color-grey;
+        @include breakPoint1400px {
+          font-size: 1.3rem;
+          line-height: 3rem;
+        }
       }
     }
   }
