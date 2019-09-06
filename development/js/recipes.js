@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     init();
     var allRecipies = [];
+    console.log(allRecipies);
     (function checkUserName() { //IIFE
         var user_Name = document.getElementById('userName');
         if (localStorage.getItem('userName')) user_Name.innerText = localStorage.getItem('userName');
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function(){
                 var newInstruccion = document.createElement('p');
                 newInstruccion.innerHTML = `<span>${instruccionCounter}.</span> ${instruccionsDescription.value} 
 <i class="far fa-edit" style="color: #BD4932"></i> <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
-                console.log(newInstruccion);
                 instruccionList.appendChild(newInstruccion);
                 instruccionCounter++;
                 instruccionsDescription.value = '';
@@ -57,12 +57,11 @@ document.addEventListener('DOMContentLoaded', function(){
                     allIngredients.forEach(function (element) {
                         newRecipe.ingredients.push(element.innerText);
                     });
-                    console.log(newRecipe);
                     recipesCounter++;
                     allRecipies.push(newRecipe);
-                    console.log(allRecipies);
                     recipeName.value = '';
                     recipeDescription.value = '';
+                    addRecipesToLocalStorage();
                 } else {
                     alert('Wypełnij wszystkie pola :-)!!')
                 }
@@ -70,5 +69,8 @@ document.addEventListener('DOMContentLoaded', function(){
             saveBtn.addEventListener('click', addRecipe);
         };
         elementsEvents();
+    }
+    function addRecipesToLocalStorage() {
+        localStorage.setItem('recipesAray', allRecipies);
     }
 });
