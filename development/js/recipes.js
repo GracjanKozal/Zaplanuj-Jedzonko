@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 newRecipeSection.classList.remove('not-visible');
                 allRecipesSection.classList.add('not-visible');
             }
+            renderAllRecipes();
         })
     })();
 
@@ -47,18 +48,38 @@ document.addEventListener('DOMContentLoaded', function(){
         var elementsEvents = function () {
             var recipesCounter = 1;
             addInstruccion.addEventListener('click', function () {
-                var newInstruccion = document.createElement('li');
-                newInstruccion.innerHTML = `${instruccionsDescription.value} <i class="far fa-edit" style="color: #BD4932"></i> 
-                <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
-                instruccionList.appendChild(newInstruccion);
-                instruccionsDescription.value = '';
+                if(instruccionsDescription.value) {
+                    var newInstruccion = document.createElement('li');
+                    newInstruccion.innerHTML = `${instruccionsDescription.value} <i class="far fa-edit" style="color: #FFB03B"></i> 
+                <i class="fas fa-trash-alt" style="color: #BD4932"></i>`;
+                    instruccionList.appendChild(newInstruccion);
+                    instruccionsDescription.value = '';
+                    var deleteBtn = newInstruccion.querySelector('.fa-trash-alt');
+                    deleteBtn.addEventListener("click", function () {
+                        deleteBtn.parentElement.parentElement.removeChild(newInstruccion);
+                    });
+                    var editBtn = newInstruccion.querySelector('.fa-edit');
+                    editBtn.addEventListener('click', function () {
+                       editBtn.parentElement.contentEditable = true;
+                    });
+                }
             });
             addIngredients.addEventListener('click', function () {
-               var newIngredient = document.createElement('li');
-               newIngredient.innerHTML = `${ingredients.value} <i class="far fa-edit" style="color: #BD4932"></i> 
-               <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
-               ingredientsList.appendChild(newIngredient);
-               ingredients.value= '';
+                if(ingredients.value) {
+                    var newIngredient = document.createElement('li');
+                    newIngredient.innerHTML = `${ingredients.value} <i class="far fa-edit" style="color: #FFB03B"></i> 
+               <i class="fas fa-trash-alt" style="color: #BD4932"></i>`;
+                    ingredientsList.appendChild(newIngredient);
+                    ingredients.value= '';
+                    var deleteBtn = newIngredient.querySelector('.fa-trash-alt');
+                    deleteBtn.addEventListener("click", function () {
+                        deleteBtn.parentElement.parentElement.removeChild(newIngredient);
+                    });
+                    var editBtn = newIngredient.querySelector('.fa-edit');
+                    editBtn.addEventListener('click', function () {
+                        editBtn.parentElement.contentEditable = true;
+                    });
+                }
             });
             function addRecipe(e) {
                 e.preventDefault();
@@ -103,5 +124,17 @@ document.addEventListener('DOMContentLoaded', function(){
             localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
         }
         alert("Przepis zapisany do localStorage");
+    }
+    function renderAllRecipes() {
+        var allRecipeList = document.getElementById('all-recipes-list');
+        allRecipeList.innerHTML= '';
+        var allRecipes = JSON.parse(localStorage.getItem("recipes"));
+        allRecipes.forEach(function(singleRecipe, index) {
+            var newLi = document.createElement("li");
+            newLi.innerHTML = `<span>${index +1}</span> <span>${singleRecipe.title}</span> 
+            <span>${singleRecipe.description}</span> <span><i class="far fa-edit" style="color: #BD4932"></i> 
+            <i class="fas fa-trash-alt" style="color: #FFB03B"></i></span>`;
+            allRecipeList.appendChild(newLi);
+        });
     }
 });
