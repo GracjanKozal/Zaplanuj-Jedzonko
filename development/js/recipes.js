@@ -6,6 +6,26 @@ document.addEventListener('DOMContentLoaded', function(){
         if (localStorage.getItem('userName')) user_Name.innerText = localStorage.getItem('userName');
     })();
 
+    (function switchSections() {
+        var swingBtn = document.getElementById('go-to-recipes');
+        var newRecipeSection = document.getElementById('new-recipe');
+        var allRecipesSection = document.getElementById('all-recipes');
+        var addRecipe = document.getElementById('add-recipe');
+        addRecipe.addEventListener('click', function () {
+           newRecipeSection.classList.remove('not-visible');
+           allRecipesSection.classList.add('not-visible');
+        });
+        swingBtn.addEventListener('click', function () {
+            if(!newRecipeSection.classList.contains('not-visible')) {
+                newRecipeSection.classList.add('not-visible');
+                allRecipesSection.classList.remove('not-visible');
+            } else {
+                newRecipeSection.classList.remove('not-visible');
+                allRecipesSection.classList.add('not-visible');
+            }
+        })
+    })();
+
     function Recipe(id, title, description) {//object constructor
         this.id = id; // id przepisu
         this.title = title; // nazwa przepisu
