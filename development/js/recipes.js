@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     init();
     var allRecipies = [];
-    console.log(allRecipies);
     (function checkUserName() { //IIFE
         var user_Name = document.getElementById('userName');
         if (localStorage.getItem('userName')) user_Name.innerText = localStorage.getItem('userName');
