@@ -59,9 +59,16 @@ document.addEventListener('DOMContentLoaded', function(){
                     });
                     recipesCounter++;
                     allRecipies.push(newRecipe);
+                    console.log(newRecipe);
                     recipeName.value = '';
                     recipeDescription.value = '';
                     addRecipesToLocalStorage();
+                    allInstruccions.forEach(function (element) {
+                        instruccionList.removeChild(element)
+                    });
+                    allIngredients.forEach(function (element) {
+                       ingredientsList.removeChild(element);
+                    });
                 } else {
                     alert('Wypełnij wszystkie pola :-)!!')
                 }
