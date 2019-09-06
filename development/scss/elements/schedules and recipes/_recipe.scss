@@ -82,17 +82,17 @@
           resize: none;
         }
       }
-      &:nth-child(3) {
-        height: 15vh;
-        @include breakPoint1400px {
-          height: 30vh;
-        }
-        width: 100%;
-        font-size: 1.2rem;
-        margin-top: 1.5%;
-        overflow-y: scroll;
-        flex-grow: 0;
+    }
+    ol {
+      height: 15vh;
+      @include breakPoint1400px {
+        height: 30vh;
       }
+      width: 100%;
+      font-size: 1.2rem;
+      margin-top: 1.5%;
+      overflow-y: scroll;
+      flex-grow: 0;
     }
   }
 }
