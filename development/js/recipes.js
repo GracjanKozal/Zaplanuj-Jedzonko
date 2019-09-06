@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     console.log(newRecipe);
                     recipeName.value = '';
                     recipeDescription.value = '';
-                    addRecipesToLocalStorage();
+                    addRecipesToLocalStorage(newRecipe);
                     allInstruccions.forEach(function (element) {
                         instruccionList.removeChild(element)
                     });
@@ -65,14 +65,23 @@ document.addEventListener('DOMContentLoaded', function(){
                        ingredientsList.removeChild(element);
                     });
                 } else {
-                    alert('Wypełnij wszystkie pola :-)!!')
+                    alert('Dodaj nazwę i opis przepisu, resztę możesz dodać później :-)!!')
                 }
             }
             saveBtn.addEventListener('click', addRecipe);
         };
-        elementsEvents();
+        return elementsEvents();
     }
-    function addRecipesToLocalStorage() {
-        localStorage.setItem('recipesAray', allRecipies);
+    function addRecipesToLocalStorage(newRecipe) {
+        var dataFromLocalStorage = [];
+        if (localStorage.getItem("recipes") != null) {
+            dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
+            dataFromLocalStorage.push(newRecipe);
+            localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+        } else {
+            dataFromLocalStorage.push(newRecipe);
+            localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+        }
+        alert("Przepis zapisany do localStorage");
     }
 });
