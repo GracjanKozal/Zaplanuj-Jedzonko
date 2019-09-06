@@ -24,7 +24,7 @@
         <nav>
             <ul>
                 <li><a href="app.html">Pulpit</a></li>
-                <li><a href="recipes.html">Przepisy</a></li>
+                <li id="go-to-recipes"><a href="#">Przepisy</a></li>
                 <li><a href="schedules.html">Plany</a></li>
             </ul>
         </nav>
@@ -70,6 +70,24 @@
                 </div>
             </div>
         </form>
+    </section>
+    <section id="all-recipes" class="not-visible">
+        <section class="wrapper">
+            <div id="all-recipeList-header">
+                <p id="header-name">LISTA PRZEPISÓW</p>
+                <p id="add-recipe"><i class="fas fa-plus-square"></i></p>
+            </div>
+            <section id="all-recipe-int-wrapper">
+                <div id="all-recipe-container">
+                    <div id="list-header">
+                        <p><span>ID</span><span>NAZWA</span><span>OPIS</span><span>AKCJE</span></p>
+                    </div>
+                    <ul id="all-recipes-list">
+                        <li>dupa</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
     </section>
 </section>
 <script src="js/recipes.js"></script>

@@ -1,16 +1,9 @@
 @import "../../base/variables";
 @import "../../base/mixins";
 
-#new-recipe {
-  @include flex($justify-content:center, $align-items:center);
-  height: 90vh;
-  width: 85vw;
-  color: $font-color-grey;
-  .wrapper {
-    @include appMessage;
-    padding: 3% 3%;
-  }
-  #recipe-header {
+#new-recipe, #all-recipes {
+  @include sectionRecipes;
+  #recipe-header, #all-recipeList-header {
     @include flex(row,$justify-content: space-between);
     font-family: $main-font;
     font-size: $font-main-size;
@@ -18,7 +11,7 @@
     width: 100%;
     padding-bottom: .5%;
     border-bottom: 2px solid #CBCBCB;
-    label {
+    label, #header-name {
       color:$buttons-color;
       font-size: 1.5rem;
       font-weight: 600;
@@ -32,6 +25,10 @@
       }
     }
   }
+}
+#add-recipe {
+  color: $message-success;
+  font-size: 2rem;
 }
 
 #recipe-name {
@@ -95,4 +92,38 @@
       flex-grow: 0;
     }
   }
+}
+#all-recipe-int-wrapper {
+  width: 100%;
+  height: 95%;
+  @include flex(column,$justify-content: center, $align-items: center);
+  #all-recipe-container {
+    width: 97%;
+    height: 97%;
+    #list-header {
+      width: 100%;
+      border-top: 1px solid #CBCBCB;
+      border-bottom: 1px solid #CBCBCB;;
+      p {
+        @include flex(row,$justify-content: space-between, $align-items: center);
+        span {
+          &:first-child {
+            width: 5%;
+          }
+          &:nth-child(2) {
+            width: 30%;
+          }
+          &:nth-child(3) {
+            width:40%;
+          }
+          &:nth-child(4) {
+            width: 8%;
+          }
+        }
+      }
+    }
+  }
+}
+.not-visible {
+  display: none !important;
 }

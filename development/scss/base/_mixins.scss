@@ -34,3 +34,13 @@ $align-items:flex-start) {
     @content
   }
 }
+@mixin sectionRecipes {
+  @include flex($justify-content:center, $align-items:center);
+  height: 90vh;
+  width: 85vw;
+  color: $font-color-grey;
+  .wrapper {
+    @include appMessage;
+    padding: 3% 3%;
+  }
+}
