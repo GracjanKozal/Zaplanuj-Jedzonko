@@ -27,30 +27,26 @@ document.addEventListener('DOMContentLoaded', function(){
         var saveBtn = document.getElementById('save');
         var elementsEvents = function () {
             var recipesCounter = 1;
-            var instruccionCounter = 1;
-            var ingredientsCounter = 1;
             addInstruccion.addEventListener('click', function () {
-                var newInstruccion = document.createElement('p');
-                newInstruccion.innerHTML = `<span>${instruccionCounter}.</span> ${instruccionsDescription.value} 
-<i class="far fa-edit" style="color: #BD4932"></i> <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
+                var newInstruccion = document.createElement('li');
+                newInstruccion.innerHTML = `${instruccionsDescription.value} <i class="far fa-edit" style="color: #BD4932"></i> 
+                <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
                 instruccionList.appendChild(newInstruccion);
-                instruccionCounter++;
                 instruccionsDescription.value = '';
             });
             addIngredients.addEventListener('click', function () {
-               var newIngredient = document.createElement('p');
-               newIngredient.innerHTML = `<span>${ingredientsCounter}.</span> ${ingredients.value} 
-<i class="far fa-edit" style="color: #BD4932"></i> <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
+               var newIngredient = document.createElement('li');
+               newIngredient.innerHTML = `${ingredients.value} <i class="far fa-edit" style="color: #BD4932"></i> 
+               <i class="fas fa-trash-alt" style="color: #FFB03B"></i>`;
                ingredientsList.appendChild(newIngredient);
-               ingredientsCounter++;
                ingredients.value= '';
             });
             function addRecipe(e) {
                 e.preventDefault();
                 if (recipeName.value && recipeDescription.value) {
                     var newRecipe = new Recipe(recipesCounter, recipeName.value, recipeDescription.value);
-                    var allInstruccions = instruccionList.querySelectorAll('p');
-                    var allIngredients = ingredientsList.querySelectorAll('p');
+                    var allInstruccions = instruccionList.querySelectorAll('li');
+                    var allIngredients = ingredientsList.querySelectorAll('li');
                     allInstruccions.forEach(function (element) {
                         newRecipe.instructions.push(element.innerText);
                     });
