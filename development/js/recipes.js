@@ -148,16 +148,10 @@ document.addEventListener('DOMContentLoaded', function(){
             newLi.querySelector('.fa-edit').addEventListener('click', function () {
                 document.getElementById('new-recipe').classList.remove('not-visible');
                 document.getElementById('all-recipes').classList.add('not-visible');
-                var recipeName = document.getElementById('recipe-name-descr');
-                var recipeDescription = document.getElementById('ingredients-description');
-                var instruccionsDescription = document.getElementById('instructions-description');
-                var instruccionList = document.getElementById('instrucion-list');
-                var ingredients = document.getElementById('ingredients');
-                var ingredientsList = document.getElementById('ingredients-list');
-                recipeName.innerText = newLi.children[1].innerText;
-                recipeDescription.innerText = newLi.children[2].innerText;
-                instruccionList.innerHTML = newLi.children[4].innerHTML;
-                ingredientsList.innerHTML = newLi.children[5].innerHTML;
+                document.getElementById('recipe-name-descr').innerText = newLi.children[1].innerText;
+                document.getElementById('ingredients-description').innerText = newLi.children[2].innerText;
+                document.getElementById('instrucion-list').innerHTML = newLi.children[4].innerHTML;
+                document.getElementById('ingredients-list').innerHTML = newLi.children[5].innerHTML;
             });
         });
     }
