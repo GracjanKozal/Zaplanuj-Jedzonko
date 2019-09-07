@@ -127,9 +127,15 @@ document.addEventListener('DOMContentLoaded', function(){
         allRecipes.forEach(function(singleRecipe, index) {
             var newLi = document.createElement("li");
             newLi.innerHTML = `<span>${index +1}</span> <span>${singleRecipe.title}</span> 
-            <span>${singleRecipe.description}</span> <span><i class="far fa-edit" style="color: #BD4932"></i> 
-            <i class="fas fa-trash-alt" style="color: #FFB03B"></i></span>`;
+            <span>${singleRecipe.description}</span> <span><i class="far fa-edit" style="color: #FFB03B"></i> 
+            <i class="fas fa-trash-alt" style="color: #BD4932" data-id="${singleRecipe.id}"></i></span>`;
             allRecipeList.appendChild(newLi);
+            newLi.querySelector('.fa-trash-alt').addEventListener('click', function () {
+                var items = JSON.parse(localStorage.getItem("recipes"));
+                items.splice(this.data,1);
+                localStorage.setItem('recipes', JSON.stringify(items));
+                window.location.reload(false);
+            })
         });
     }
 });
