@@ -126,16 +126,45 @@ document.addEventListener('DOMContentLoaded', function(){
         var allRecipes = JSON.parse(localStorage.getItem("recipes"));
         allRecipes.forEach(function(singleRecipe, index) {
             var newLi = document.createElement("li");
+            var instructionsOl = document.createElement('ol');
+            var ingredientsOl = document.createElement("ol");
+            singleRecipe.instructions.forEach(function (instruction) {
+                var newRecipeLi = document.createElement("li");
+                newRecipeLi.innerHTML = instruction;
+                instructionsOl.appendChild(newRecipeLi);
+            });
+            singleRecipe.ingredients.forEach(function (ingredient) {
+                var newRecipeLi = document.createElement("li");
+                newRecipeLi.innerHTML = ingredient;
+                ingredientsOl.appendChild(newRecipeLi);
+            });
             newLi.innerHTML = `<span>${index +1}</span> <span>${singleRecipe.title}</span> 
-            <span>${singleRecipe.description}</span> <span><i class="far fa-edit" style="color: #FFB03B"></i> 
+            <span>${singleRecipe.description}</span> <span><i class="far fa-edit" data-id="${singleRecipe.id}" style="color: #FFB03B" ></i> 
             <i class="fas fa-trash-alt" style="color: #BD4932" data-id="${singleRecipe.id}"></i></span>`;
+            newLi.appendChild(instructionsOl);
+            newLi.appendChild(ingredientsOl);
             allRecipeList.appendChild(newLi);
-            newLi.querySelector('.fa-trash-alt').addEventListener('click', function () {
-                var items = JSON.parse(localStorage.getItem("recipes"));
-                items.splice(this.data,1);
-                localStorage.setItem('recipes', JSON.stringify(items));
-                window.location.reload(false);
-            })
+            newLi.querySelector('.fa-trash-alt').addEventListener('click', deleteRecipe);
+            newLi.querySelector('.fa-edit').addEventListener('click', function () {
+                document.getElementById('new-recipe').classList.remove('not-visible');
+                document.getElementById('all-recipes').classList.add('not-visible');
+                var recipeName = document.getElementById('recipe-name-descr');
+                var recipeDescription = document.getElementById('ingredients-description');
+                var instruccionsDescription = document.getElementById('instructions-description');
+                var instruccionList = document.getElementById('instrucion-list');
+                var ingredients = document.getElementById('ingredients');
+                var ingredientsList = document.getElementById('ingredients-list');
+                recipeName.innerText = newLi.children[1].innerText;
+                recipeDescription.innerText = newLi.children[2].innerText;
+                instruccionList.innerHTML = newLi.children[4].innerHTML;
+                ingredientsList.innerHTML = newLi.children[5].innerHTML;
+            });
         });
+    }
+    function deleteRecipe() {
+        var items = JSON.parse(localStorage.getItem("recipes"));
+        items.splice(this.data,1);
+        localStorage.setItem('recipes', JSON.stringify(items));
+        window.location.reload(false);
     }
 });
