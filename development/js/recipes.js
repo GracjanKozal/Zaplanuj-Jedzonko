@@ -16,13 +16,8 @@ document.addEventListener('DOMContentLoaded', function(){
            allRecipesSection.classList.add('not-visible');
         });
         swingBtn.addEventListener('click', function () {
-            if(!newRecipeSection.classList.contains('not-visible')) {
-                newRecipeSection.classList.add('not-visible');
-                allRecipesSection.classList.remove('not-visible');
-            } else {
-                newRecipeSection.classList.remove('not-visible');
-                allRecipesSection.classList.add('not-visible');
-            }
+            newRecipeSection.classList.toggle('not-visible');
+            allRecipesSection.classList.toggle('not-visible');
             renderAllRecipes();
         })
     })();
