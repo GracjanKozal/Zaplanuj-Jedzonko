@@ -1,3 +1,8 @@
+Together with my colegues from Bootcamp in CodersLab we created this Web app. when you can create recipes for food as well as the plans for each week. We worked in Scrum methodology. The time of the sprint was 2 weeks. The section regarding the food plans is not finished. There are as well small bugs. In this project we used only ES5. I was responsible for all JavaScript code. We used Sass to style the entire app. The username and the recipes are stored in localstorage
+
+http://zaplanujjedzonko.cba.pl/
+
+
 # ScrumLab
 This is a repository dedicated to ScrumLab front-end project.
 
